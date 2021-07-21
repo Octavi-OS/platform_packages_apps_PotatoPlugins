@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package co.potatoproject.plugin.volume.oos;
+package co.potatoproject.plugin.volume.nez;
 
 import android.media.AppTrackData;
 import android.database.ContentObserver;
@@ -103,7 +103,7 @@ import android.widget.Toast;
 
 import co.potatoproject.plugin.volume.common.*;
 
-import co.potatoproject.plugin.volume.oos.R;
+import co.potatoproject.plugin.volume.nez.R;
 
 import com.android.systemui.plugins.ActivityStarter;
 import com.android.systemui.plugins.PluginDependency;
@@ -257,7 +257,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
                 mWindowParams.type = WindowManager.LayoutParams.TYPE_VOLUME_OVERLAY;
         mWindowParams.format = PixelFormat.TRANSLUCENT;
         mWindowParams.windowAnimations = -1;
-        mDialog = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_oos,
+        mDialog = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_nez,
                         (ViewGroup) null, false);
 
         mDialog.setOnTouchListener((v, event) -> {
@@ -480,7 +480,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
 
     @SuppressLint("InflateParams")
     private void initAppRow(final VolumeRow row, final AppTrackData data) {
-        row.view = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_oos_row, null);
+        row.view = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_nez_row, null);
 
         row.packageName = data.getPackageName();
         row.isAppVolumeRow = true;
@@ -592,7 +592,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
         row.iconMuteRes = iconMuteRes;
         row.important = important;
         row.defaultStream = defaultStream;
-        row.view = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_oos_row, null);
+        row.view = LayoutInflater.from(mContext).inflate(R.layout.volume_dialog_nez_row, null);
         row.view.setId(row.stream);
         row.view.setTag(row);
         row.header = row.view.findViewById(R.id.volume_row_header);
